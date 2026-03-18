@@ -579,16 +579,11 @@ OpenClaw provides automatic protection via plugins.
 ### Installation
 
 ```bash
-cd {baseDir}/plugins/security-input-validator-plugin
-node install.ts
+cd {baseDir}
+npm install
 ```
 
-```bash
-cd {baseDir}/plugins/security-tool-validator-plugin
-node install.ts
-```
-
-This config openclaw.json
+This add plugin config in openclaw.json
 ```json
 {
   "plugins": {
@@ -1006,11 +1001,15 @@ openclaw-sec test
 │   │   ├── secret-detector/
 │   │   └── content-scanner/
 │   └── patterns/               # Detection patterns
-├── hooks/
-│   ├── user-prompt-submit-hook.ts
-│   ├── tool-call-hook.ts
-│   ├── install-hooks.sh
-│   └── README.md
+├── plugins/
+│   ├── security-input-validator-plugin/
+│   │   ├── index.ts            # Plugin entry
+│   │   ├── install.ts          # Install logic
+│   │   └── openclaw.plugin.json
+│   └── security-tool-validator-plugin/
+│       ├── index.ts            # Plugin entry
+│       ├── install.ts          # Install logic
+│       └── openclaw.plugin.json
 ├── .openclaw-sec.yaml     # Configuration
 └── .openclaw-sec.db       # Database
 ```
@@ -1019,7 +1018,8 @@ openclaw-sec test
 
 ## Support
 
-- **GitHub:** [github.com/PaoloRollo/openclaw-sec](https://github.com/PaoloRollo/openclaw-sec)
+- **GitHub:** [github.com/lockdown56/openclaw-sec](https://github.com/lockdown56/openclaw-sec)
+- **Ref:** [github.com/PaoloRollo/openclaw-sec](https://github.com/PaoloRollo/openclaw-sec)
 - **Docs:** See README.md
 - **Issues:** Report via GitHub Issues
 
